@@ -14,10 +14,10 @@ import React, { useState } from "react";
 const ExpenseItem = (props) => {
   // Must happen inside function.
   const [title, setTitle] = useState(props.title);
-  
+
   // Naming conventions end with Handler. means its being called and attached by an event.
   const clickHandler = () => {
-    setTitle('Updated!');
+    setTitle("Updated!");
     console.log(title);
   };
 
