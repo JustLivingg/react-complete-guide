@@ -5,38 +5,42 @@ const ExpenseForm = () => {
   // Its completely okay to have multiple states in React.
   // Using One State instead of multiple states.
 
-  // const [enteredTitle, setEnteredTitle] = useState('');
-  // const [enteredAmount, setEnteredAmount] = useState('');
-  // const [enteredData, setEnteredData] = useState('');
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredData, setEnteredData] = useState('');
 
-  const [userInput, setUserInput] = useState({
-    enteredTitle: '',
-    enteredAmount: '',
-    enteredData: ''
-  });
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredData: ''
+  // });
 
+  // State doesn't happen automatically. it gets scheduled. 
   const titleChangeHandler = (event) => {
-    //setEnteredTitle(event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value,
-    })
+    setEnteredTitle(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // })
+    // setUserInput((prevState) => {
+    //     return{...prevState, enteredTitle: event.target.value}
+    // });
   };
 
   const amountChangeHandler = (event) => {
-    //setEnteredAmount(event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredAmount: event.target.value,
-    })
+    setEnteredAmount(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: event.target.value,
+    // })
   };
 
   const dataChangeHandler = (event) => {
-    //setEnteredData(event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredData: event.target.value,
-    })
+    setEnteredData(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredData: event.target.value,
+    // })
   };
 
   return (
