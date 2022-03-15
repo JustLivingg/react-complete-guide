@@ -3,21 +3,40 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
   // Its completely okay to have multiple states in React.
-  
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredData, setEnteredData] = useState('');
+  // Using One State instead of multiple states.
+
+  // const [enteredTitle, setEnteredTitle] = useState('');
+  // const [enteredAmount, setEnteredAmount] = useState('');
+  // const [enteredData, setEnteredData] = useState('');
+
+  const [userInput, setUserInput] = useState({
+    enteredTitle: '',
+    enteredAmount: '',
+    enteredData: ''
+  });
 
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
+    //setEnteredTitle(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredTitle: event.target.value,
+    })
   };
 
   const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    //setEnteredAmount(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredAmount: event.target.value,
+    })
   };
 
   const dataChangeHandler = (event) => {
-    setEnteredData(event.target.value);
+    //setEnteredData(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredData: event.target.value,
+    })
   };
 
   return (
