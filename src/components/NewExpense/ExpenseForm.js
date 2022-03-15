@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // Its completely okay to have multiple states in React.
   // Using One State instead of multiple states.
 
@@ -52,7 +52,10 @@ const ExpenseForm = () => {
       data: new Date(enteredData),
     };
 
-    console.log(expenseData);
+    // Passing data up from child to parent.
+    props.onSaveExpenseData(expenseData);
+
+    // console.log(expenseData);
     // Two way binding to clear forms after submit.
     setEnteredTitle("");
     setEnteredAmount("");
