@@ -5,9 +5,9 @@ const ExpenseForm = () => {
   // Its completely okay to have multiple states in React.
   // Using One State instead of multiple states.
 
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredData, setEnteredData] = useState('');
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredData, setEnteredData] = useState("");
 
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: '',
@@ -15,7 +15,7 @@ const ExpenseForm = () => {
   //   enteredData: ''
   // });
 
-  // State doesn't happen automatically. it gets scheduled. 
+  // State doesn't happen automatically. it gets scheduled.
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
     // setUserInput({
@@ -43,8 +43,22 @@ const ExpenseForm = () => {
     // })
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      data: new Date(enteredData)
+    };
+
+  console.log(expenseData)
+  };
+
+  
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
