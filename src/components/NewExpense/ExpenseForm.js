@@ -7,7 +7,7 @@ const ExpenseForm = (props) => {
 
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
-  const [enteredData, setEnteredData] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: '',
@@ -35,8 +35,8 @@ const ExpenseForm = (props) => {
     // })
   };
 
-  const dataChangeHandler = (event) => {
-    setEnteredData(event.target.value);
+  const dateChangeHandler = (event) => {
+    setEnteredDate(event.target.value);
     // setUserInput({
     //   ...userInput,
     //   enteredData: event.target.value,
@@ -46,20 +46,20 @@ const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const expenseData = {
+    const expenseDate = {
       title: enteredTitle,
       amount: enteredAmount,
-      data: new Date(enteredData),
+      data: new Date(enteredDate),
     };
 
     // Passing data up from child to parent.
-    props.onSaveExpenseData(expenseData);
+    props.onSaveExpenseDate(expenseDate);
 
     // console.log(expenseData);
     // Two way binding to clear forms after submit.
     setEnteredTitle("");
     setEnteredAmount("");
-    setEnteredData("");
+    setEnteredDate("");
   };
 
   return (
@@ -89,8 +89,8 @@ const ExpenseForm = (props) => {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
-            value={enteredData}
-            onChange={dataChangeHandler}
+            value={enteredDate}
+            onChange={dateChangeHandler}
           />
         </div>
       </div>

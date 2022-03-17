@@ -3,18 +3,18 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
-  const saveExpenseDataHandler = (enteredExpenseData) => {
-    const expenseData = {
-      ...enteredExpenseData,
+  const saveExpenseDateHandler = (enteredExpenseDate) => {
+    const expenseDate = {
+      ...enteredExpenseDate,
       id: Math.random().toString(),
     };
     // Passing data up from child to parent.
-    props.onAddExpense(expenseData);
+    props.onAddExpense(expenseDate);
   };
 
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      <ExpenseForm onSaveExpenseDate={saveExpenseDateHandler} />
     </div>
   );
 };
