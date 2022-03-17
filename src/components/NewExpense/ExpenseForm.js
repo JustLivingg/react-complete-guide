@@ -49,7 +49,7 @@ const ExpenseForm = (props) => {
     const expenseDate = {
       title: enteredTitle,
       amount: enteredAmount,
-      data: new Date(enteredDate),
+      date: new Date(enteredDate),
     };
 
     // Passing data up from child to parent.
